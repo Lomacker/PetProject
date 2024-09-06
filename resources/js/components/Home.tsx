@@ -8,7 +8,7 @@ interface HomeProps {
 const Home = (props: HomeProps) => {
     const { test1, test2 } = props;
 
-    return <div>Test1: { test1 }, Test2: { test2 }</div>;
+    return <div className='badge bg-primary text-wrap'>Test1: { test1 }, Test2: { test2 }</div>;
 };
 
 export default Home;
