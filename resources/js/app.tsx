@@ -1,7 +1,12 @@
 import "./bootstrap";
 import "../css/app.css";
-
+import React from "react";
 import ReactDOM from "react-dom/client";
-import Home from "./components/Home";
+import router from "./routes";
+import { RouterProvider } from "react-router-dom";
 
-ReactDOM.createRoot(document.getElementById("app")).render(<Home test1={'test11'} test2={12} />);
+ReactDOM.createRoot(document.getElementById("app")).render(
+    <React.StrictMode>
+        <RouterProvider router={router} />
+    </React.StrictMode>
+);
