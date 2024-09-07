@@ -2,10 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::group(['namespace' => 'App\Http\Controllers\User'], function () {
-    Route::get('/users', 'IndexController');
-});
 
+// /api/users
 Route::prefix('api')->group(function () {
     Route::get('/users', function () {
         return 'API RESP';
@@ -15,6 +13,12 @@ Route::prefix('api')->group(function () {
         return 'Product List';
     });
 });
+
+// /users
+Route::group(['namespace' => 'App\Http\Controllers\User'], function () {
+    Route::get('/users', 'IndexController');
+});
+
 
 Route::get('/{any}', function () {
     return view('layout');
