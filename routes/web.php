@@ -1,7 +1,10 @@
 <?php
 
-use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+
+Route::group(['namespace' => 'App\Http\Controllers\User'], function () {
+    Route::get('/users', 'IndexController');
+});
 
 Route::prefix('api')->group(function () {
     Route::get('/users', function () {
@@ -18,7 +21,5 @@ Route::get('/{any}', function () {
 })->where('any', '.*');
 
 
-Route::group(['namespace' => 'User'], function () {
-    Route::get('/users', [UserController::class, 'index']);
-});
+
 

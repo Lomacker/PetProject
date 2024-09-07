@@ -7,10 +7,11 @@ use App\Models\User;
 
 class IndexController extends Controller
 {
-    public function __invoke()
+    public function __invoke(): string
     {
         $users = User::all();
-        dd($users);
+        dump($users);
+        return 'get successfully';
     }
 
 
