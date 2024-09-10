@@ -3,16 +3,16 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
-use App\Models\User;
+use App\Interfaces\UserServiceInterface;
+use Illuminate\Support\Facades\App;
 
 class IndexController extends Controller
 {
     public function __invoke(): string
     {
-        $users = User::all();
+        $userService = App::make(UserServiceInterface::class);
+        $users = $userService->getAll();
         dump($users);
         return 'get successfully';
     }
-
-
 }
