@@ -12,7 +12,8 @@ class IndexController extends Controller
     {
         $userService = App::make(UserServiceInterface::class);
         $users = $userService->getAll();
-        dump($users);
-        return 'get successfully';
+        // dump($users);
+//        phpinfo();
+        return phpinfo();
     }
 }
